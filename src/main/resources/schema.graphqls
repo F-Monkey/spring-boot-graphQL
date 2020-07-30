@@ -1,0 +1,27 @@
+#
+#schema {
+ #
+#}
+
+type Book {
+    id: String
+    name: String
+    author: Author
+}
+
+type Author {
+    id: String
+    name: String
+}
+
+type Query {
+    # 无参, 返回字符串
+    hello: String
+    # 字段参数且不能为空, 返回普通对象
+    authorById(id: String!): Author
+    # 对象参数, 返回列表
+    author: [Author]
+    # 对象参数，返回列表
+    book: [Book]
+}
+
